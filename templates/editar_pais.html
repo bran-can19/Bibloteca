@@ -1,0 +1,27 @@
+xtends 'bootstrap/base.html' %}
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %}
+            biblioteca Web App-Paises
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="../static/style/style.css">
+{% endblock %}
+
+{% block body %}
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% block content %}
+    <h2>Edicion de nombre del pais</h2>
+    <div class="container-fluid">
+        <form action="" method="post">
+            <input type="hidden" name="id" values="{{pais[0]}}">
+            <label for="nombre">Nombre del Pais</label>
+            <input type="text" name="nombre" values="{{pais[1]}}">
+            <input type="submit" values="actualizar">
+            <a href="">{{url_for('index')}}</a>
+        </form>
+</div>

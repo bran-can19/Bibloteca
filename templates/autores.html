@@ -3,7 +3,7 @@
     {{ super() }}
     <title>
         {% block title %}
-            Biblioteca Web App
+            Biblioteca Web App-Autores
         {% endblock %}
     </title>
     <link rel="stylesheet" href="../static/style/style.css">
@@ -17,10 +17,10 @@
     {% block content %}
     <table class="table table-hover">
         <tr>
-            <td>Id de autor</td>
-            <td>Nombre del autor</td>
-            <td>Apellido del autor </td>
-            <td>Pais de origen</td>
+            <th scope="col">Id de autor</th>
+            <th scope="col">Nombre del autor</th>
+            <th scope="col">Apellido del autor </th>
+            <th scope="col">Pais de origen</th>
         </tr>
         {% for autor in datos %}
         <tr>
@@ -32,4 +32,4 @@
         {% endfor %}
     </table>
     {% endblock %}
-{% endblock %}s
+{% endblock %}

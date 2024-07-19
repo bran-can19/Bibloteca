@@ -1,9 +1,9 @@
-xtends 'bootstrap/base.html' %}
+{% extends 'bootstrap/base.html' %}
 {% block head %}
     {{ super() }}
     <title>
         {% block title %}
-            biblioteca Web App-Paises
+            biblioteca Web App-Editar pais
         {% endblock %}
     </title>
     <link rel="stylesheet" href="../static/style/style.css">
@@ -15,15 +15,21 @@ xtends 'bootstrap/base.html' %}
     {% endblock %}
 
     {% block content %}
-    <h2>Edicion de nombre del pais</h2>
-    <br>
-    <div class="container-fluid">
-         {% for pais in datos %}
-        <form action="{{ url_for('update2_pais' nombre=pais[1] ,id_pais=pais[0], ) }} " method="post">
-            <input type="hidden" name="id" values="{{pais[0]}}">
-            <label for="nombre">Nombre del Pais</label>
-            <input type="text" name="nombre" values="{{pais[1]}}">
-            <input type="submit" values="actualizar">
-            <a href="">{{url_for('index')}} Cancelar</a>
-        </form>
-</div>
+        <div class="container-fluid">
+            <h2>Edicion de paises</h2><br>
+                {% for pais in datos %}
+                    <form action="{{ url_for('update2_pais',nombre=datos[1],id_pais=pais[0], ) }}" method="post">
+                        <input type="hidden" name="id" value="{{ pais [0] }}">
+                        <label for="nombre">Nombre del pais</label>
+                        <input type="text" name="nombre" value="{{ pais [1] }}">
+                        <input type="submit" value="actualizar">
+                        <a href="{{url_for('index')}}">Cancelar</a>
+                    </form>
+                {% endfor %}
+        </div>
+    {% endblock %}
+{% endblock %}
+
+
+
+
